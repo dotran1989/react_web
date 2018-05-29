@@ -1,3 +1,18 @@
 _ State:
 + Component own state.
 + Global state for entire app.
+
+_ Updating state:
++ You must never mutate or change state direct in memory -> bugs in application
+
+Ex: 
+this.state.deadline = 'November 5, 2018'
+this.state.counter += 1
+
++ this.setState({...}) -> pass entirely new object with a key value pair
+
++ 'this.state' and 'this.setState(...)' is extend from Component.
+
+_ Bind methods:
+
+https://www.fullstackreact.com/articles/use-property-initializers-for-cleaner-react-components/

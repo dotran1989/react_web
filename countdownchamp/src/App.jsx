@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
+    
     constructor(props) {
         super(props);
         this.state = {
             deadline: 'December 25, 2018'
         };
+    }
+
+    changeDeadline() {
+        this.setState({
+            deadline: 'November 25, 2017'
+        })
     }
 
     render() {
@@ -21,7 +28,9 @@ class App extends Component {
                 </div>
                 <div>
                     <input placeholder='new date'/>
-                    <button>Submit</button>
+                    <button onClick={() => this.changeDeadline()}>
+                        Submit
+                    </button>
                 </div>
             </div>
         );
