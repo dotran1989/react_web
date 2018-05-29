@@ -4,13 +4,12 @@ import './App.css';
 class App extends Component {
     
     state = {
-        deadline: 'December 25, 2018'
+        deadline: 'December 25, 2018',
+        newDeadline: ''
     }
 
     changeDeadline = () => {
-        this.setState((prevState) => (
-            { deadline: 'November 25, 2017'}
-        ));
+        console.log('state', this.state);
     };
 
     render() {
@@ -24,7 +23,10 @@ class App extends Component {
                     <div className="Clock-seconds">20 seconds</div>
                 </div>
                 <div>
-                    <input placeholder='new date'/>
+                    <input 
+                        placeholder='new date'
+                        onChange={event => this.setState({newDeadline: event.target.value})}
+                    />
                     <button onClick={this.changeDeadline}>
                         Submit
                     </button>
@@ -35,3 +37,8 @@ class App extends Component {
 }
 
 export default App;
+
+/*  state 
+{deadline: "December 25, 2018", newDeadline: "November 25 2020"}
+deadline: "December 25, 2018"newDeadline: "November 25 2020"__proto__: Object 
+*/
