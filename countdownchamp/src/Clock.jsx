@@ -10,6 +10,7 @@ class Clock extends Component {
             minutes: 0,
             seconds: 0
         }
+        console.log('this.props', this.props);
     }
 
     render() {
@@ -25,3 +26,9 @@ class Clock extends Component {
 }
 
 export default Clock;
+
+/* 
+this.props {deadline: "December 25, 2018"}
+deadline: "December 25, 2018"
+__proto__: Object 
+*/
