@@ -9,7 +9,7 @@ class App extends Component {
     }
 
     changeDeadline = () => {
-        console.log('state', this.state);
+        this.setState({deadline: this.state.newDeadline});
     };
 
     render() {
