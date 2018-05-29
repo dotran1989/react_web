@@ -3,18 +3,15 @@ import './App.css';
 
 class App extends Component {
     
-    constructor(props) {
-        super(props);
-        this.state = {
-            deadline: 'December 25, 2018'
-        };
+    state = {
+        deadline: 'December 25, 2018'
     }
 
-    changeDeadline() {
-        this.setState({
-            deadline: 'November 25, 2017'
-        })
-    }
+    changeDeadline = () => {
+        this.setState((prevState) => (
+            { deadline: 'November 25, 2017'}
+        ));
+    };
 
     render() {
         return (
@@ -28,7 +25,7 @@ class App extends Component {
                 </div>
                 <div>
                     <input placeholder='new date'/>
-                    <button onClick={() => this.changeDeadline()}>
+                    <button onClick={this.changeDeadline}>
                         Submit
                     </button>
                 </div>
