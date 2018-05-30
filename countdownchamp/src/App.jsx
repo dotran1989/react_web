@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import Clock from './Clock';
+import CountDown from './CountDown';
 import './App.css';
 
 class App extends Component {
     
     state = {
         deadline: 'December 25, 2018',
-        newDeadline: ''
+        newDeadline: '',
+        amountOfTime: 3,
+        newAmountOfTime: 0
     }
 
     changeDeadline = () => {
         this.setState({deadline: this.state.newDeadline});
     };
+
+    countDownClick = () => {
+        this.setState({amountOfTime: this.state.newAmountOfTime});
+    }
 
     render() {
         return (
@@ -29,6 +36,21 @@ class App extends Component {
                         Submit
                     </button>
                 </div>
+                <div className="Challenges">-------Challenges-------</div>
+                <div>
+                    <input 
+                        placeholder="Amount of time"
+                        onChange={event => this.setState({newAmountOfTime: event.target.value})}
+                    />
+                    <button
+                        onClick={this.countDownClick}
+                    >
+                        Count Down
+                    </button>
+                </div>
+                <CountDown
+                    amountOfTime={this.state.amountOfTime}
+                />
             </div>
         );
     }
